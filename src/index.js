@@ -2,6 +2,7 @@ const express = require('express')
 const bodyParser = require('body-parser')
 const { PORT } = require('./config/serverConfig')
 const {sendBasicEmail}= require('./services/email-service')
+const cron = require('node-cron')
 const setupAndStartServer = () => {
     const app = express()
     app.use(bodyParser.json())
@@ -15,6 +16,9 @@ const setupAndStartServer = () => {
             "remainder service",
             "hope this remainder service message reached to you"
         )
+        // cron.schedule('* * * * * *', () => {
+        //     console.log('running a task every secound');
+        //   });
     })
 
 }
