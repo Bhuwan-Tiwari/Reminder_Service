@@ -14,8 +14,8 @@ const setupAndStartServer = () => {
     app.use(bodyParser.json())
     app.use(bodyParser.urlencoded({ extended: true }))
 
-  app.post('/api/v1/tickets',TicketController.create)
-
+  app.post('/reminderservice/api/v1/tickets',TicketController.create)
+  
 
     app.listen(PORT, async () => {
         console.log(`server started at port ${PORT}`)
